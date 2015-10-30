@@ -10,6 +10,8 @@
 
 	<mvc:annotation-driven/>
 	
+	<mvc:resources location="pdfs" mapping="/pdfs/**"/>
+	
 	<context:component-scan base-package="com.adeleon.controller"></context:component-scan>
 	
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="messages"></bean>
