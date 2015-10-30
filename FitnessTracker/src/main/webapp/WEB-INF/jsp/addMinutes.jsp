@@ -12,6 +12,9 @@
 </head>
 <body>
 <h1>Add Minutes Exercised</h1>
+
+Language : <a href="?language=en">English</a> | <a href="?language=es">Spanish</a>  | <a href="?language=fr">Frances</a>
+
 <form:form commandName="exercise">
 	<table>
 		<tr>
@@ -25,6 +28,6 @@
 		</tr>
 	</table>
 </form:form>
-
+<h1>Our goal for the day is: ${goal.minutes}</h1>
 </body>
 </html>
