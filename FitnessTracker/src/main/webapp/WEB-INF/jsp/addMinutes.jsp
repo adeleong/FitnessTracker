@@ -9,6 +9,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Minutes Page</title>
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(
+		function(){
+			$.getJSON('<spring:url value="activities.json"/>',{
+				ajax : 'true'
+			}, function(data){
+				var html = '<option value="">--Please select one--</option>';
+				var len = data.length;
+				for(var i=0; i < len; i++){
+					html += '<option value "'+ data[i].desc + '">'
+							+ data[i].desc + '</option>';
+				}
+				html += '</option>';
+				$('#activities').html(html)
+			})
+		}		
+	)
+</script>
 </head>
 <body>
 <h1>Add Minutes Exercised</h1>
@@ -20,6 +40,9 @@ Language : <a href="?language=en">English</a> | <a href="?language=es">Spanish</
 		<tr>
 			<td><spring:message code="goal.text" /></td>
 			<td><form:input path="minutes"/> </td>
+			<td>
+				<form:select id = "activities" path="activity"></form:select>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2">
